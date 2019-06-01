@@ -1,0 +1,41 @@
+<div id="myMusic" ng-controller="MyMusicPluginController as myMusic"
+    class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><i class="fa fa-music"></i>   <span translate="COMMON.MY_MUSIC"></span></h3>
+  </div>
+  <div class="panel-body">
+    <h4 ng-if="false" class="sectionDescription"></h4>
+    <table class="table">
+      <tr>
+        <th><span translate="COMMON.ARTISTS"></span></th>
+        <th><span translate="COMMON.ALBUMS"></span></th>
+        <th><span translate="COMMON.SONGS"></span></th>
+        <th>
+          <span class="hidden-xs" translate="COMMON.PLAYTIME"></span>
+          <span class="visible-xs" translate="COMMON.TIME"></span>
+        </th>
+      </tr>
+      <tr>
+        <td>
+          {{myMusic.myCollectionStats.artists}}
+        </td>
+        <td>
+          {{myMusic.myCollectionStats.albums}}
+        </td>
+        <td>
+          {{myMusic.myCollectionStats.songs}}
+        </td>
+        <td>
+          {{myMusic.myCollectionStats.playtime}}
+        </td>
+      </tr>
+    </table>
+    <button ng-click="myMusic.updateLibrary()" type="button" class="btn btn-info" title="{{'MY_MUSIC.UPDATE_DOC' | translate}}">
+      <span translate="MY_MUSIC.UPDATE"></span>
+    </button>
+    <button ng-click="myMusic.rescanLibrary()" type="button" class="btn btn-info" title="{{'MY_MUSIC.RESCAN_DOC' | translate}}">
+      <span translate="MY_MUSIC.RESCAN"></span>
+    </button>
+
+  </div>
+</div>

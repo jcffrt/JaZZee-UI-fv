@@ -1,0 +1,84 @@
+<div class="modal-header">
+  <h3 class="modal-title"><i class="fa fa-bed"></i> {{modal.dataObj.name}}</h3>
+</div>
+<div class="modal-body sleep">
+  <div class="row">
+    <div class="col-sm-8">
+      <h4 translate="COMMON.ACTION"></h4>
+      <ui-select
+          id="whenSleep"
+          ng-model="modal.action"
+          search-enabled="false"
+          append-to-body="false"
+          theme="bootstrap">
+        <ui-select-match
+            class="ui-select-match"
+            placeholder="">
+          {{$select.selected.text}}
+        </ui-select-match>
+        <ui-select-choices
+            class="ui-select-choices"
+            repeat="item in modal.whenSleepSelect track by $index">
+          <div id="sleepOption-{{item.val}}" ng-bind-html="item.text"></div>
+        </ui-select-choices>
+      </ui-select>
+    </div>
+    <div class="col-sm-8">
+      <uib-timepicker
+          ng-model="modal.sleepTime"
+          ng-change="modal.timeChanged()"
+          hour-step="1"
+          minute-step="1"
+          show-meridian="modal.showMeridian">
+      </uib-timepicker>
+    </div>
+    <div class="col-sm-6">
+      <h4 translate="SLEEP.PRESET_TIMES"></h4>
+      <ui-select
+        id="presetTime"
+        ng-model="modal.sleepPreset"
+        search-enabled="false"
+        append-to-body="false"
+        theme="bootstrap"
+        on-select="modal.whenSleepPresetSelect()"
+      >
+        <ui-select-match
+          class="ui-select-match"
+          placeholder={{modal.preset_placeholder}}>
+          {{$select.selected.text}}
+        </ui-select-match>
+        <ui-select-choices
+          class="ui-select-choices"
+          repeat="preset in modal.sleepPresets track by $index">
+          <div id="sleepPreset-{{preset.val}}" ng-bind-html="preset.text"></div>
+        </ui-select-choices>
+      </ui-select>
+    </div>
+  </div>
+    <div class="col-sm-8">
+      <h4 translate="COMMON.ACTIVE"></h4>
+      <input
+          bs-switch
+          ng-model="modal.enabled"
+          type="checkbox"
+          switch-size="medium"
+          switch-animate="false"
+          switch-on-text="On"
+          switch-off-text="Off"
+          ng-true-value="true"
+          ng-false-value="false">
+    </div>
+  </div>
+</div>
+<div class="modal-footer">
+  <button
+      class="btn btn-warning"
+      ng-click="modal.cancel()">
+  <span translate="COMMON.CANCEL"></span>
+  </button>
+  <button
+      class="btn btn-info"
+      ng-click="modal.setSleep()">
+    <span translate="COMMON.SAVE"></span>
+  </button>
+</div>

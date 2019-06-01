@@ -1,0 +1,29 @@
+<div id="networkStatus" ng-controller="NetworkStatusPluginController as networkStatus"
+    class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><i class="fa fa-tachometer"></i> <span translate="NETWORK.NETWORK_STATUS"></span></h3>
+  </div>
+  <div class="panel-body">
+    <h4 ng-if="::false" class="sectionDescription"></h4>
+    <div class="networkStatus">
+      <div class="panel panel-default col-sm-12" ng-repeat="network in ::networkStatus.networkInfos track by $index">
+        <div class="panel-heading">
+          <h3 class="panel-title">{{::network.type}}</h3>
+        </div>
+        <div class="panel-body">
+          <ul>
+            <li ng-if="::network.ssid"><span>  <img
+                  ng-if="::network.signal >= 0"
+                  ng-src="{{networkStatus.$rootScope.assetsUrl + '/wifi-icons/' + network.signal + '.png'}}" alt="signal-{{wifi.signal}}" class="signal-icon"></span> {{::network.ssid}}</li>
+            <li><span> <span translate="NETWORK.IP_ADDRESS"></span>:</span> {{::network.ip}}</li>
+            <li ng-if="::network.speed"><span> <span translate="NETWORK.SPEED"></span>:</span>  {{::network.speed}}</li>
+            <li><span> <span translate="NETWORK.ONLINE"></span>:</span>
+              <i class="fa fa-check true" ng-if="network.online"></i>
+              <i class="fa fa-remove false" ng-if="!network.online"></i>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

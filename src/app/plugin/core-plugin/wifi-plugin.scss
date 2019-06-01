@@ -1,0 +1,61 @@
+#wifiPlugin {
+  tr {
+    td{
+      border-top: 0 !important;
+      border-bottom: 1px solid #7C7C7C;
+      &.insertPasswordRow {
+        label {
+          margin-right: 10px;
+        }
+        input[type=checkbox] {
+          width: auto;
+        }
+        input[type=text], input[type=password] {
+          max-width: 300px;
+          display: inline-block;
+          margin-bottom: 10px;
+          margin-right: -5px;
+        }
+        text-align: right;
+      }
+      &.commandCol {
+        max-width: 210px;
+        text-align: right;
+      }
+      &.wifiIcon {
+        width: 36px;
+        text-align: center;
+        img {
+          width: 20px;
+        }
+      }
+      &.lockIcon {
+        width: 30px;
+        text-align: center;
+      }
+      .securitySelectWrapper {
+        width: 120px;
+        display: inline-block;
+        margin-right: 15px;
+        position: relative;
+        .ui-select-choices {
+          position: absolute;
+          top: -22px;
+          left: 0;
+        }
+      }
+      .showHidePassword {
+        margin-right: 10px;
+      }
+    }
+  }
+  .refreshWiFiNetworks {
+    margin-top: 15px;
+  }
+}
+
+.fa-rotate-90 {
+    -ms-transform:rotate(90deg);
+    -webkit-transform:rotate(90deg);
+    transform:rotate(90deg);
+}

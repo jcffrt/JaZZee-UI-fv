@@ -1,0 +1,17 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\dist\\scripts",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\components",
+    "\\src\\app\\components\\myvolumio",
+    "\\src\\app\\components\\myvolumio\\components",
+    "\\src\\app\\components\\myvolumio\\components\\card",
+    "\\src\\app\\components\\side-menu",
+    "\\src\\app\\components\\side-menu\\elements",
+    "\\src\\app\\mock"
+  ],
+  "SelectedNode": "\\src\\app\\components\\side-menu\\side-menu.html",
+  "PreviewInSolutionExplorer": false
+}

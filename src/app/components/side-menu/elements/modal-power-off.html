@@ -1,0 +1,23 @@
+<div class="modal-header">
+  <h3 class="modal-title"><i class="fa fa-power-off"></i> {{modal.dataObj.name}}</h3>
+</div>
+<div class="modal-footer">
+  <button
+      class="btn btn-warning"
+      ng-click="modal.cancel()">
+  <span translate="COMMON.CANCEL"></span>
+  </button>
+  <button
+      class="btn btn-info"
+      id="powerOffBtn"
+      ng-click="modal.powerOff()">
+    <span translate="COMMON.POWER_OFF"></span>
+  </button>
+  <button
+      ng-if="modal.themeManager.theme !== 'opera'"
+      class="btn btn-info"
+      id="rebootBtn"
+      ng-click="modal.reboot()">
+    <span translate="COMMON.REBOOT_SYSTEM"></span>
+  </button>
+</div>

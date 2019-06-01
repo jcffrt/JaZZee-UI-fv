@@ -1,0 +1,14 @@
+<div id="systemVersion" ng-controller="SystemVersionPluginController as sv"
+    class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><i class="fa fa-info-circle"></i> <span translate="COMMON.SYSTEM_VERSION"></span></h3>
+  </div>
+  <div class="panel-body">
+    <h4 ng-if="false" class="sectionDescription"></h4>
+    <span translate="COMMON.SYSTEM_VERSION"></span>: {{sv.systemVersion.systemversion}}
+    <span translate="COMMON.RELEASED"></span>: {{sv.systemVersion.builddate}}
+    <h4 ng-if="false" class="sectionDescription"></h4>
+    <div ng-if="sv.systemVersion.additionalSVInfo">{{sv.systemVersion.additionalSVInfo}}
+    </div>
+  </div>
+</div>

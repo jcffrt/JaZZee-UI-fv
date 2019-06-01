@@ -1,0 +1,40 @@
+<div id="modalPlaylist">
+  <div class="modal-header">
+    <h3 class="modal-title">{{::modal.dataObj.title}}</h3>
+  </div>
+  <div class="modal-body">
+    <input type="text" class="form-control pull-left" ng-model="modal.customPlaylist">
+    <button
+        type="button"
+        ng-if="!modal.customPlaylist.length"
+        ng-click="modal.addToCustomPlaylist()"
+        class="btn btn-info pull-right disabled">
+      {{'COMMON.NEW' | translate}}
+    </button>
+    <button
+        type="button"
+        ng-if="modal.customPlaylist.length"
+        ng-click="modal.addToCustomPlaylist()"
+        class="btn btn-info pull-right">
+      {{'COMMON.NEW' | translate}}
+    </button>
+    <div class="clearfix"></div>
+    <ul class="list-group">
+      <li class="list-group-item"
+          ng-click="modal.addToFavourite()">
+        {{'COMMON.FAVOURITES' | translate}}
+      </li>
+      <li ng-repeat="playlist in modal.playlistService.playlists track by $index"
+          class="list-group-item"
+          ng-click="modal.addToPlaylist(playlist)">
+        {{::playlist}}
+      </li>
+    </ul>
+  </div>
+  <div class="modal-footer">
+    <!-- <button class="btn btn-primary" ng-click="modal.ok()">Add</button> -->
+    <button class="btn btn-warning" ng-click="modal.cancel()">
+      {{'COMMON.CANCEL' | translate}}
+    </button>
+  </div>
+</div>
