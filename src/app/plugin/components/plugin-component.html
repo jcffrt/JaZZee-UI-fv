@@ -18,15 +18,16 @@
 
         <div ng-if="section.coreSection" ng-include="'app/plugin/core-plugin/' + section.coreSection + '-plugin.html'">
         </div>
-
-        <div ng-if="!section.coreSection" class="panel-heading">
+<!--Put condition in ng-if so that section for Streaming Services etc is not included - JaZZee-->
+        <div ng-if="!section.coreSection && section.icon!='fa-user'" class="panel-heading">
           <h3 class="panel-title">
             <i ng-if="section.icon" class="fa {{section.icon}}"></i>
             <img ng-if="!section.icon && section.image" src={{::pluginComponent.pluginObj.host+'/albumart?sectionimage='+section.image}} class="section-image"/> {{this.socketService.host}}{{section.label}}
           </h3>
-        </div>
+        </div> 
 
-        <div ng-if="!section.coreSection" class="panel-body">
+<!--Put condition in ng-if so that section for Streaming Services etc is not included - JaZZee-->
+        <div ng-if="!section.coreSection  && section.icon!='fa-user'" class="panel-body">
           <h4 class="sectionDescription" ng-if="section.description">
             {{section.description}}
           </h4>
@@ -74,7 +75,7 @@
                   </div>
                 </div>
 
-                <!--<div class="clearfix visible-sm"></div>-->
+                
 
                 <div ng-if="pluginComponent.uiSettingsService.uiSettings.plugins.showDoc && item.doc" class="control-doc">
                   <a href ng-click="pluginComponent.openDoc(item)">
@@ -96,7 +97,7 @@
               </div>
             </form>
           </div>
-        </div>
+        </div> 
       </div>
     </div>
   </div>

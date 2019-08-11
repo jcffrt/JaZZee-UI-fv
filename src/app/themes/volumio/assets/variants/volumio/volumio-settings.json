@@ -1,6 +1,6 @@
 {
-  "app": "Volumio",
-  "pageTitle": "Volumio - Audiophile Music Player",
+  "app": "JaZZee",
+  "pageTitle": "JaZZee - hires streamer",
   "sideMenu": {
     "checkboxes": {
         "analogInput": false,

@@ -214,7 +214,7 @@ function routerConfig($stateProvider, $urlRouterProvider, $locationProvider, the
           if (!enabled) {
             enabling.reject('MYVOLUMIO_NOT_ENABLED');
           } else {
-            enabling.resolve(true);
+            enabling.resolve(true); 
           }
         });
         return enabling.promise;

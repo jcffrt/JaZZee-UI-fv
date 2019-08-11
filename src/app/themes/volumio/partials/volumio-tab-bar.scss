@@ -1,33 +1,46 @@
 .tabBar {
   button {
-    @include make-xs-column(8, 0);
+    @include make-xs-column(24, 0);
     font-size: 18px;
     border-radius: 0px !important;
     border: none !important;
     height: $footerHeight;
+
     img {
-      width:25px;
-      height:25px;
+      width: 25px;
+      height: 25px;
+
       @include breakpoint(xs) {
         width: 30px;
         height: 30px;
       }
     }
+
     &.browseBtn {
       // background-color: $theme-dark-transparent-background;
+      background-color: $theme-dark-transparent-background;
+
+      &:focus {
+        background-color: $theme-dark-transparent-background;
+      }
     }
+
     &.playbackBtn {
       background-color: $theme-link-playback-color;
+
       &:focus {
         // background-color: $theme-dark-transparent-background;
       }
     }
+
     &.queueBtn {
       // background-color: $theme-dark-transparent-background;
     }
+
     @include breakpoint(xs) {
       font-size: 26px;
     }
+
     span {
       margin-left: 10px;
       @extend .hidden-xs;

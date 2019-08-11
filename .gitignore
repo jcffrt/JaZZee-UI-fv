@@ -1,17 +1,8 @@
-src/app/ngConstants.js
-src/app/volumio.constant.js
-src/app/local-config.json
 dist/
 node_modules/
 bower_components/
 .sass-cache/
 .idea/
 .tmp/
-src/app/themes/
-!src/app/themes/volumio/*
-src/app/themes/volumio/assets/variants/
-!src/app/themes/volumio/assets/variants/volumio/*
-load-variant.scss
 /nbproject/
 .DS_Store
-src/app/volumio.constant.js

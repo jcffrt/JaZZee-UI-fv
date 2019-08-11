@@ -16,9 +16,16 @@
       <i class="fa fa-times"></i>
     </button>
 
+<!-- Eliminate the My Volumio Division in side menu
     <div ng-if="sideMenu.isAuthActive()" id="myvolumio-card-container">
       <my-volumio-user-card action-callback="sideMenu.toggleMenu()">
         </my-volumio-card>
+    </div>
+-->
+    <div class="side-logo" >
+      <img
+        ng-src="{{variantAssetsUrl}}/graphics/{{variant}}-logo-sidebar.png"
+        alt="{{header.themeManager.theme}}"/>
     </div>
 
     <button
